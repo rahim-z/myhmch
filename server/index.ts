@@ -1,29 +1,25 @@
 import express from "express";
+import { db } from "./datastore/index.ts";
 
 const app = express();
 
 app.use(express.json())
 
-const posts: any[] = [];
-
 const requestLoggerMiddleware: express.RequestHandler = (req, res, next) => {
-    console.log("new request:",req.path, "request body:",req.body);
+    console.log(req.method,req.path, "- body:",req.body);
     next();
 }
 
 app.use(requestLoggerMiddleware);
-app.use((req, res, next) => {
-    console.log(Date.now());
-    next();
-});
+
 
 app.get("/posts", (request, response) => {
-    response.send({posts: posts});
+    response.send({ posts: db.listPosts() });
 });
 
 app.post("/posts", (req, res) => { 
     const post = req.body;
-    posts.push(post);
+    db.createPost(post);
     res.sendStatus(200);
 });
 
