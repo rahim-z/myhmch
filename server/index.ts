@@ -1,5 +1,5 @@
 import express from "express";
-import { listPostsHandler, createPostHandler } from "./handlers/postHandler.js";
+import { listPostsHandler, createPostHandler } from "./handlers/postHandler.ts";
 
 const app = express();
 
