@@ -1,6 +1,8 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
+
     // File Layout
     // "rootDir": "./src",
     // "outDir": "./dist",
@@ -11,6 +13,7 @@
     "moduleResolution": "nodenext",
     "target": "esnext",
     "types": [],
+
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -40,6 +43,6 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }

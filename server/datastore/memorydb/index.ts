@@ -1,4 +1,4 @@
-import type { Post, User, Comment, Like } from "../../types.js";
+import type { Post, User, Comment, Like } from "../../types.ts";
 import type { Datastore } from "../index.ts";
 
 export class InMemoryDatastore implements Datastore {
